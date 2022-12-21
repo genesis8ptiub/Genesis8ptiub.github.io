@@ -21,9 +21,18 @@
     <div class="container-content mt-4">
         <h1><span><img src="./images/LOGO_GENESIS_8.0-removebg-preview.png"></span> Sertifikat Kelulusan <br> <span>Genesis 8.0</span></h1>
 
-        <form action="index.php" method="post">
+        <?php if (isset($_GET['error'])) { ?>
+                <p class="error" style="background-color: rgb(242, 222, 222, 0.4);
+                    color: #69201d;
+                    padding: 10px;
+                    width: 90%;
+                    border-radius: 8px;"
+                ><?php echo $_GET['error']; ?></p>
+        <?php } ?>
+        
+        <form action="login.php" method="post">
             <div class="form-control-content">
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" required autocomplete="off">
                 <label>Nama</label>
             </div>
 
@@ -33,7 +42,7 @@
             </div>
 
             <div class="btn-con">
-                <button class="btn-log" type="submit" name="login">Login</button>
+                <button type="submit" class="btn-log" name="login">Login</button>
             </div>
         </form>
     </div>
